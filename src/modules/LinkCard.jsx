@@ -24,7 +24,8 @@ export const LinkCard = ({name, domain, isFile, onClick}) => {
         <div className="w-16 h-16 rounded-2xl mb-3 flex items-center justify-center text-2xl font-bold shadow-lg transition-all duration-300
         bg-[#2a2f3a] text-[#d9dae2] group-hover:bg-[#548ec5] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 overflow-hidden">
             {!imageError && imageUrl ? (<img
-                src={imageUrl} alt={name} className="w-full h-full object-cover" onError={() => setImageError(true)}
+                src={imageUrl} alt={name} loading="lazy" className="w-full h-full object-cover"
+                onError={() => setImageError(true)}
             />) : (<span>{initial}</span>)}
         </div>
         <p className="text-[#d9dae2] text-sm font-medium px-2 truncate w-full text-center group-hover:text-white transition-colors">
